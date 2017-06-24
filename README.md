@@ -1,6 +1,7 @@
 # Nagios Plugin for Alfresco
 
 Nagios or Icinga Plugin for Alfresco - Toni de la Fuente (blyx.com)
+
 Original and based on Nagios JMX Plugin of Felix Roethenbacher (Copyright 2009)
 
  * 31/01/2010: Version 1.0 - first release (Suport Alfresco Enterprise 3.2 and above)
@@ -11,14 +12,14 @@ Original and based on Nagios JMX Plugin of Felix Roethenbacher (Copyright 2009)
 
 # Installation
 
-Change your JMX credentials in Alfresco: (for persistent change see here http://docs.alfresco.com/5.0/tasks/jmx-access.html)
+1. Change your JMX credentials in Alfresco: (for persistent change see here http://docs.alfresco.com/5.0/tasks/jmx-access.html)
 
-Copy next two files to your Nagios plugin directory.
+2. Copy next two files to your Nagios plugin directory.
 
   - check_alfresco
   - check_alfresco.jar
   
-For a couple of sample command definitions copy:
+3. For a couple of sample command definitions copy:
 
   - alfresco-commands.cfg
   
@@ -26,16 +27,16 @@ to your Nagios plugin configuration directory or add this command definitions to
 
 # Configuration
 
-Definitions for monitoring Alfresco Enterprise
+1. Set definitions for monitoring Alfresco Enterprise in:
 
+```
 cfg_file=/usr/local/icinga/etc/objects/alfresco-commands.cfg
 cfg_file=/usr/local/icinga/etc/objects/alfresco-server.cfg
+``` 
+2. Edit alfresco-server.cfg to fits your needs in terms of alerts threshold for warning and critical
 
-Edit alfresco-server.cfg to fits your needs in terms of alerts threshold for warning and critical
-Edit last 3 commands in alfresco-commands.cfg to set your Repository Path
-
-In order to use command definitions you can use something like next line in your "define service" for each host (USERNAME and PASSWORD are jmxrmi configured credentials):
+3. Edit last 3 commands in alfresco-commands.cfg to set your Repository Path. In order to use command definitions you can use something like next line in your "define service" for each host (USERNAME and PASSWORD are jmxrmi configured credentials):
 
   - check_alfresco_HeapMemoryUsage_Used!PORT!USERNAME!PASSWORD!750000000!800000000
 
-Copy alfresco.gif logo to your Nagios/Icinga logos directory ($NAGIOS_PATH/share/images/logos)
+4. Copy alfresco.gif logo to your Nagios/Icinga logos directory ($NAGIOS_PATH/share/images/logos)
