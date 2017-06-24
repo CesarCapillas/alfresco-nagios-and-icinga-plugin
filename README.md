@@ -23,18 +23,14 @@ Original and based on Nagios JMX Plugin of Felix Roethenbacher (Copyright 2009)
   
 to your Nagios plugin configuration directory or add this command definitions to your commands.cfg file, otherwise add next lines to nagios.cfg file:
 
-## Configuration
-
-1. Set definitions for monitoring Alfresco Enterprise in:
-
 ```
 cfg_file=/usr/local/icinga/etc/objects/alfresco-commands.cfg
 cfg_file=/usr/local/icinga/etc/objects/alfresco-server.cfg
 ``` 
-2. Edit alfresco-server.cfg to fits your needs in terms of alerts threshold for warning and critical
+4. Edit alfresco-server.cfg to fits your needs in terms of alerts threshold for warning and critical
 
-3. Edit last 3 commands in alfresco-commands.cfg to set your Repository Path. In order to use command definitions you can use something like next line in your "define service" for each host (USERNAME and PASSWORD are jmxrmi configured credentials):
+5. Edit last 3 commands in alfresco-commands.cfg to set your Repository Path. In order to use command definitions you can use something like next line in your "define service" for each host (USERNAME and PASSWORD are jmxrmi configured credentials):
 
     - check_alfresco_HeapMemoryUsage_Used!PORT!USERNAME!PASSWORD!750000000!800000000
 
-4. Copy alfresco.gif logo to your Nagios/Icinga logos directory ($NAGIOS_PATH/share/images/logos)
+6. Copy alfresco.gif logo to your Nagios/Icinga logos directory ($NAGIOS_PATH/share/images/logos)
